@@ -1,22 +1,33 @@
 /* TABS: height */
 
-*, :root {
-    --uc-toolbar-height: 18px !important;
-    --tab-min-height:      var(--uc-toolbar-height);
-    --tab-min-width:       60px !important;
+:root {
+    --toolbar-height: 18px !important;
+    --tab-min-height: var(--toolbar-height) !important;
+    --tab-min-width: 60px !important;
 
-    --urlbar-container-height:  var(--uc-toolbar-height) !important;
-    --urlbar-height:           var(--uc-toolbar-height) !important;
-    --urlbar-top-spacing:      0px !important;
-    --urlbar-min-height:       var(--uc-toolbar-height) !important;
-    --urlbar-toolbar-height:   var(--uc-toolbar-height) !important;
+    --urlbar-container-height: var(--toolbar-height) !important;
+    --urlbar-height: var(--toolbar-height) !important;
+    --urlbar-top-spacing: 0px !important;
+    --urlbar-min-height: var(--toolbar-height) !important;
+    --urlbar-toolbar-height: var(--toolbar-height) !important;
 }
 
 #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
-    height: initial !important;
+    height: var(--tab-min-height) !important;
+    padding-bottom: 2px !important;
 }
 
-#tabbrowser-tabs > #tabbrowser-arrowscrollbox,
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container .tab-text {
+    margin-block: 0 !important;
+    padding-block: 0 !important;
+    height: 100% !important;
+    line-height: calc(var(--toolbar-height) - 4px) !important;
+    font-size: calc(var(--toolbar-height) - 4px) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+#tabbrowser-tabs>#tabbrowser-arrowscrollbox,
 .tabbrowser-tabs .tabbrowser-tab {
     min-height: var(--tab-min-height) !important;
     max-height: var(--tab-min-height) !important;
@@ -29,39 +40,47 @@
 .tabbrowser-tab .tab-background {
     margin-block: 0 !important;
 }
+
 .tabbrowser-tab .tab-icon-image {
     width: calc(var(--tab-min-height) - 4px) !important;
     height: calc(var(--tab-min-height) - 4px) !important;
 }
 
 #titlebar {
-    height: var(--uc-toolbar-height) !important;
+    height: var(--toolbar-height) !important;
 }
 
 /* TOOLBAR: height */
 
-#navigator-toolbox, #nav-bar {
-    height: var(--uc-toolbar-height) !important;
-    min-height: var(--uc-toolbar-height) !important;
+#navigator-toolbox,
+#nav-bar {
+    height: var(--toolbar-height) !important;
+    min-height: var(--toolbar-height) !important;
 }
 
-#tracking-protection-icon, #identity-icon, .toolbarbutton-icon, .urlbar-icon, .urlbar-page-action .urlbar-icon {
-    width: calc(var(--uc-toolbar-height) - 4px) !important;
-    height: calc(var(--uc-toolbar-height) - 4px) !important;
+#tracking-protection-icon,
+#identity-icon,
+.toolbarbutton-icon,
+.urlbar-icon,
+.urlbar-page-action .urlbar-icon {
+    width: calc(var(--toolbar-height) - 4px) !important;
+    height: calc(var(--toolbar-height) - 4px) !important;
 
     margin-top: 0 !important;
     padding: 0 !important;
 }
 
 .toolbarbutton-animatable-image {
-    width: calc(var(--uc-toolbar-height) - 4px);
-    height: calc(var(--uc-toolbar-height) - 4px);
+    width: calc(var(--toolbar-height) - 4px);
+    height: calc(var(--toolbar-height) - 4px);
 }
 
 #tracking-protection-icon-box {
     height: initial !important;
 }
-#urlbar, #urlbar * {
+
+#urlbar,
+#urlbar * {
     padding-block-start: 0 !important;
 }
 
@@ -70,14 +89,19 @@
 }
 
 .toolbarbutton-animatable-box {
-    width: var(--uc-toolbar-height) !important;
-    height: var(--uc-toolbar-height) !important;
+    width: var(--toolbar-height) !important;
+    height: var(--toolbar-height) !important;
 }
 
 /* TOOLBAR: coloring */
 #nav-bar {
     overflow-x: visible !important;
 }
+
 #nav-bar-customization-target {
     box-shadow: -5px 0px 13px #1e98e1;
+}
+
+#browser {
+    border-top: 1px solid var(--uc-highlight-colour);
 }
