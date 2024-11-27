@@ -1,14 +1,8 @@
 :root {
-
   --toolbarbutton-border-radius: var(--uc-border-radius) !important;
   --tab-border-radius: var(--uc-border-radius) !important;
   --arrowpanel-border-radius: var(--uc-border-radius) !important;
-
 }
-
-
-
-
 
 #main-window,
 #toolbar-menubar,
@@ -16,7 +10,6 @@
 #navigator-toolbox,
 #sidebar-box,
 #nav-bar { box-shadow: none !important; }
-
 
 #main-window,
 #toolbar-menubar,
@@ -38,24 +31,12 @@
     padding-bottom: 1px;
 }
 
-
-
-
-
 #PersonalToolbar {
-
   padding: 6px !important;
   box-shadow: inset 0 0 50vh rgba(0, 0, 0, var(--uc-darken-toolbar)) !important;;
-
 }
 
-
-
-
-
 #statuspanel #statuspanel-label {
-
   border: none !important;
   border-radius: var(--uc-border-radius) !important;
-
 }

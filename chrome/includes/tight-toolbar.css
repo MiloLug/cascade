@@ -1,7 +1,8 @@
-/* TABS: height */
+/* TOOLBAR: height */
 
 :root {
-    --toolbar-height: 18px !important;
+    --toolbar-height: var(--tight-toolbar-height) !important;
+    --toolbar-font-size: calc(var(--tight-toolbar-height) * 0.4285 + 6.286px) !important;
     --tab-min-height: var(--toolbar-height) !important;
     --tab-min-width: 60px !important;
 
@@ -9,7 +10,16 @@
     --urlbar-height: var(--toolbar-height) !important;
     --urlbar-top-spacing: 0px !important;
     --urlbar-min-height: var(--toolbar-height) !important;
+    --tabstrip-min-height: var(--tight-toolbar-height) !important;
     --urlbar-toolbar-height: var(--toolbar-height) !important;
+}
+
+#urlbar {
+    --urlbar-height: var(--tight-toolbar-height) !important;
+}
+
+#urlbar-container {
+    --urlbar-container-height: var(--tight-toolbar-height) !important;
 }
 
 #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
@@ -21,8 +31,8 @@
     margin-block: 0 !important;
     padding-block: 0 !important;
     height: 100% !important;
-    line-height: calc(var(--toolbar-height) - 4px) !important;
-    font-size: calc(var(--toolbar-height) - 4px) !important;
+    line-height: var(--toolbar-font-size) !important;
+    font-size: var(--toolbar-font-size) !important;
     display: inline-flex !important;
     align-items: center !important;
 }
@@ -35,6 +45,7 @@
 
 #TabsToolbar {
     align-items: center !important;
+    min-height: var(--tight-toolbar-height) !important;
 }
 
 .tabbrowser-tab .tab-background {
@@ -42,16 +53,11 @@
 }
 
 .tabbrowser-tab .tab-icon-image {
-    width: calc(var(--tab-min-height) - 4px) !important;
-    height: calc(var(--tab-min-height) - 4px) !important;
-}
-
-#titlebar {
-    height: var(--toolbar-height) !important;
+    width: var(--toolbar-font-size) !important;
+    height: var(--toolbar-font-size) !important;
 }
 
 /* TOOLBAR: height */
-
 #navigator-toolbox,
 #nav-bar {
     height: var(--toolbar-height) !important;
@@ -63,16 +69,16 @@
 .toolbarbutton-icon,
 .urlbar-icon,
 .urlbar-page-action .urlbar-icon {
-    width: calc(var(--toolbar-height) - 4px) !important;
-    height: calc(var(--toolbar-height) - 4px) !important;
+    width: var(--toolbar-font-size) !important;
+    height: var(--toolbar-font-size) !important;
 
     margin-top: 0 !important;
     padding: 0 !important;
 }
 
 .toolbarbutton-animatable-image {
-    width: calc(var(--toolbar-height) - 4px);
-    height: calc(var(--toolbar-height) - 4px);
+    width: var(--toolbar-font-size);
+    height: var(--toolbar-font-size);
 }
 
 #tracking-protection-icon-box {
@@ -104,4 +110,23 @@
 
 html:not([inFullscreen]) #browser {
     border-top: 1px solid var(--uc-highlight-colour);
+}
+
+/* TOOLBAR MENU */
+#toolbar-menubar {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    background: black;
+    top: 0;
+    left: 0;
+}
+
+#toolbar-menubar[autohide="true"][inactive]:not([customizing]) {
+    min-height: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    appearance: none !important;
+    min-width: 0 !important;
+    width: 0 !important;
 }

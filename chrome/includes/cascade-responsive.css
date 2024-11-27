@@ -6,7 +6,7 @@
     }
 
     #nav-bar {
-        order: var(--uc-urlbar-position);
+        order: var(--tight-urlbar-position);
         width: var(--uc-urlbar-min-width);
     }
 
@@ -15,8 +15,8 @@
         width: auto !important;
     }
 
-    #titlebar {
-        order: 2;
+    #TabsToolbar {
+        order: var(--tight-tabbar-position);
         width: calc(100vw - var(--uc-urlbar-min-width) - 1px);
     }
 
@@ -29,16 +29,25 @@
         width: var(--uc-urlbar-max-width);
     }
 
-    #navigator-toolbox:focus-within #titlebar {
+    #navigator-toolbox:focus-within #TabsToolbar {
         width: calc(100vw - var(--uc-urlbar-max-width) - 1px);
     }
 }
 
 @media (max-width: 999px) {
+    #TabsToolbar {
+        order: 1;
+    }
     #nav-bar {
         margin-top: 1px;
+        position: fixed;
+        top: -100px;
+        order: 2;
     }
-
+    #nav-bar:focus-within {
+        position: relative;
+        top: unset;
+    }
     #nav-bar-customization-target {
         box-shadow: none !important;
     }

@@ -16,6 +16,12 @@
     0 places directly in the corner
     */
     --uc-status-panel-spacing: 12px;
+   
+    /*
+    The height of the toolbar.
+    Font size is derived from this value, but can be overwritten in  fl
+    */
+    --tight-toolbar-height: 18px;
 }
 
 
@@ -42,6 +48,14 @@
 }
 
 
+
+/*
+LAYOUT
+*/
+:root {
+    --tight-urlbar-position: 1;
+    --tight-tabbar-position: 2;
+}
 
 
 
@@ -90,13 +104,6 @@
    */
     --uc-urlbar-min-width: 16vw;
     --uc-urlbar-max-width: 25vw;
-
-    /*  Position of the URL Bar
-   *  possible values:
-   *  1 – tabs on the right
-   *  3 – tabs on the left
-   */
-    --uc-urlbar-position: 1;
 
     /*  Firefox can be a little wonky with the vertical
    *  URL Bar placement. Change this variable to adapt
