@@ -1,6 +1,5 @@
 @media (min-width: 1000px) {
     #navigator-toolbox {
-        display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
     }
@@ -37,15 +36,16 @@
 @media (max-width: 999px) {
     #TabsToolbar {
         order: 1;
+        width: 100%;
     }
     #nav-bar {
         margin-top: 1px;
-        position: fixed;
+        position: fixed !important;
         top: -100px;
         order: 2;
     }
     #nav-bar:focus-within {
-        position: relative;
+        position: relative !important;
         top: unset;
     }
     #nav-bar-customization-target {
