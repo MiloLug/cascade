@@ -22,9 +22,6 @@
 }
 
 
-
-
-
 /* tab close button options */
 .tabbrowser-tab:not([pinned]) .tab-close-button {
     display: var(--show-tab-close-button) !important;
@@ -33,9 +30,6 @@
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
     display: var(--show-tab-close-button-hover) !important
 }
-
-
-
 
 
 /* adaptive tab width */
@@ -48,21 +42,13 @@
 }
 
 
-
-
-
 /* container tabs indicator */
 .tabbrowser-tab[usercontextid]>.tab-stack>.tab-background>.tab-context-line {
-
     margin: -1px var(--container-tabs-indicator-margin) 0 var(--container-tabs-indicator-margin) !important;
     height: 1px !important;
 
     box-shadow: var(--uc-identity-glow) var(--identity-tab-color) !important;
-
 }
-
-
-
 
 
 /* show favicon when media is playing but tab is hovered */
@@ -74,7 +60,6 @@
 /* Makes the speaker icon to always appear if the tab is playing (not only on hover) */
 .tab-icon-overlay:not([crashed]),
 .tab-icon-overlay[pinned][crashed][selected] {
-
     top: 5px !important;
     z-index: 1 !important;
 
@@ -84,13 +69,11 @@
     height: 16px !important;
 
     border-radius: 10px !important;
-
 }
 
 
 /* style and position speaker icon */
 .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
     stroke: transparent !important;
     background: transparent !important;
     opacity: 1 !important;
@@ -100,16 +83,13 @@
 
     stroke: var(--toolbar-bgcolor) !important;
     background-color: var(--toolbar-bgcolor) !important;
-
 }
 
 
 /* change the colours of the speaker icon on active tab to match tab colours */
 .tabbrowser-tab[selected] .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-
     stroke: var(--toolbar-bgcolor) !important;
     background-color: var(--toolbar-bgcolor) !important;
-
 }
 
 
@@ -119,37 +99,31 @@
 
 
 .tabbrowser-tab:not([image]) .tab-icon-overlay:not([pinned], [sharing], [crashed]) {
-
     top: 0 !important;
 
     padding: 0 !important;
     margin-inline-end: 5.5px !important;
     inset-inline-end: 0 !important;
-
 }
 
 
 .tab-icon-overlay:not([crashed])[soundplaying]:hover,
 .tab-icon-overlay:not([crashed])[muted]:hover,
 .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
     color: currentColor !important;
     stroke: var(--toolbar-color) !important;
     background-color: var(--toolbar-color) !important;
     fill-opacity: 0.95 !important;
-
 }
 
 
 .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[soundplaying]:hover,
 .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[muted]:hover,
 .tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
-
     color: currentColor !important;
     stroke: var(--toolbar-color) !important;
     background-color: var(--toolbar-color) !important;
     fill-opacity: 0.95 !important;
-
 }
 
 
